@@ -19,7 +19,7 @@ class TitleOptionsWidget extends StatelessWidget {
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
             fontWeight: FontWeight.w500,
             color: AppDefaultColor.ti03Color,
-            fontSize: AppDefaultFontSize.sizeLabelSize
+            fontSize: AppDefaultFontSize.bodyMedium
           )
         )
       ]

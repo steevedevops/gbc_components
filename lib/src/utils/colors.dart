@@ -49,15 +49,27 @@ class AppDefaultColor {
   static Color grey = const Color(0xffE3E5EB);
 }
 
-
 class AppDefaultFontSize { 
-  static double sizeLabelSize = 13;
-  static double fontSize11 = 11;
-  static double fontSize12 = 12;
-  static double fontSize13 = 13;
-  static double fontSize14 = 14;
-  static double fontSize15 = 15;
-  static double fontSize16 = 16;
+  static double displayLarge = 96;
+  static double displayMedium = 60;
+  static double displaySmall = 48;
+
+  static double headlineLarge = 44;
+  static double headlineMedium = 34;
+  static double headlineSmall = 24;
+  
+  static double titleLarge = 20;
+  static double titleMedium = 16;
+  static double titleSmall = 14;
+
+  static double bodyLarge = 16;
+  static double bodyMedium = 14;
+  static double bodySmall = 12;
+
+  static double labelLarge = 14;
+  static double labelMedium = 12;
+  static double labelSmall = 10;
+
   static double cursorHeight = 15;
 }
 
