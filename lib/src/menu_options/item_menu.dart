@@ -18,6 +18,9 @@ class ItemMenuWidget extends StatelessWidget {
         )),
         foregroundColor: WidgetStatePropertyAll<Color>(AppDefaultColor.scaffoldBackgroundColor),
         overlayColor: WidgetStatePropertyAll<Color>(AppDefaultColor.scaffoldBackgroundColor),
+        padding: const WidgetStatePropertyAll<EdgeInsets>(
+          EdgeInsets.all(10)
+        )
       ),
       onPressed: onTap,
       child: itemWidget ?? TitleOptionsWidget(icon: icon, label: label)

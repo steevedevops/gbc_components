@@ -9,20 +9,23 @@ class TitleOptionsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(icon, color: AppDefaultColor.ti02Color, size: 19),
-        const SizedBox(width: 10),
-        Text(
-          label,
-          maxLines: 1,
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            fontWeight: FontWeight.w500,
-            color: AppDefaultColor.ti03Color,
-            fontSize: AppDefaultFontSize.bodyMedium
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        children: [
+          Icon(icon, color: AppDefaultColor.ti02Color, size: 20),
+          const SizedBox(width: 10),
+          Text(
+            label,
+            maxLines: 1,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              fontWeight: FontWeight.w500,
+              color: AppDefaultColor.ti01Color,
+              fontSize: AppDefaultFontSize.bodyMedium
+            )
           )
-        )
-      ]
+        ]
+      ),
     );
   }
 }

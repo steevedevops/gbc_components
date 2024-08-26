@@ -20,7 +20,7 @@ class _MenuOptionsWidgetState extends State<MenuOptionsWidget> {
       style: MenuStyle(
         elevation: const WidgetStatePropertyAll<double>(0),
         shadowColor: WidgetStatePropertyAll<Color>(AppDefaultColor.ti02Color),
-        padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(EdgeInsets.symmetric(horizontal: 10, vertical: 20)),
+        padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(EdgeInsets.symmetric(horizontal: 7, vertical: 15)),
         backgroundColor: const WidgetStatePropertyAll<Color>(Colors.white),
         side: WidgetStatePropertyAll<BorderSide>(BorderSide(
           width: 1,
