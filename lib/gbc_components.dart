@@ -17,3 +17,6 @@ export 'src/menu_options/main_menu.dart';
 
 // utils info like default colors and outhers
 export 'src/utils/colors.dart';
+
+// Loading Widget
+export 'src/loading/loading_widget.dart';
