@@ -2,7 +2,7 @@ library gbc_components;
 
 // Inputs
 export 'src/inputs/simple_input.dart';
-export 'src/inputs/password_input.dart';
+export 'src/inputs/search_input.dart';
 
 // Buttons
 export 'src/button/simple_button.dart';

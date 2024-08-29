@@ -6,6 +6,7 @@ import 'package:gbc_components/gbc_components.dart';
 import 'package:gbc_components/src/formatters/br_telefone_input_formatter.dart';
 import 'package:gbc_components/src/formatters/cep_input_formatter.dart';
 import 'package:gbc_components/src/formatters/cnpj_input_formatter.dart';
+import 'package:gbc_components/src/formatters/cpf_cnpj_input_formatter.dart';
 import 'package:gbc_components/src/formatters/cpf_input_formatter.dart';
 import 'package:gbc_components/src/formatters/credit_card_formatter.dart';
 import 'package:gbc_components/src/formatters/currency_input_formatter.dart';
@@ -15,7 +16,6 @@ import 'package:gbc_components/src/formatters/mmyyyy_formatter.dart';
 import 'package:gbc_components/src/formatters/time_formatter.dart';
 import 'package:gbc_components/src/inputs/theme/input_theme.dart';
 import 'package:gbc_components/src/texts/text_error.dart';
-import 'package:gbc_components/src/utils/colors.dart';
 import 'package:gbc_components/src/utils/input_utils.dart';
 
 
@@ -67,6 +67,7 @@ class _SimpleInputState extends State<SimpleInput> {
   StatusTextField statusValided = StatusTextField.valided;
 
   bool isEmail(String input) => EmailValidator.validate(input);
+  bool showPass = false;
 
   @override
   Widget build(BuildContext context) {
@@ -120,13 +121,18 @@ class _SimpleInputState extends State<SimpleInput> {
             inputFormatters: defineTypeformatters(widget.typeInput),
             keyboardType: defineTypeInput(widget.typeInput),
             textCapitalization: widget.textCapitalization,
+            obscureText: widget.typeInput == TypeSimpleInput.PASSWORD && showPass == false,
             textInputAction: kIsWeb ? TextInputAction.none : TextInputAction.done,
             decoration: inputThemeDecoration(
               context,
               statusTextField: statusValided,
               hintText: widget.hintText,
               title: widget.title,
-              prefix: widget.prefix
+              prefix: widget.prefix,
+              suffixIcon: widget.typeInput != TypeSimpleInput.PASSWORD ? null : IconButton(
+                onPressed: () => setState(() => showPass = !showPass),
+                icon: Icon(showPass ? Icons.visibility_off : Icons.remove_red_eye),
+              ),
             )
           )
         ),
@@ -158,7 +164,7 @@ class _SimpleInputState extends State<SimpleInput> {
     else if(typeInput == TypeSimpleInput.CPFCNPJ){
       return [
         FilteringTextInputFormatter.digitsOnly,
-        // CpfCnpjInputFormatter()
+        CpfCnpjInputFormatter()
       ];
     }
     else if(typeInput == TypeSimpleInput.CEP){

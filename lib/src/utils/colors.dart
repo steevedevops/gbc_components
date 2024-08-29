@@ -63,7 +63,7 @@ class AppDefaultFontSize {
   static double titleSmall = 14;
 
   static double bodyLarge = 16;
-  static double bodyMedium = 14;
+  static double bodyMedium = 13;
   static double bodySmall = 12;
 
   static double labelLarge = 14;
