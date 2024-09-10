@@ -6,6 +6,7 @@ export 'src/inputs/search_input.dart';
 
 // Buttons
 export 'src/button/simple_button.dart';
+export 'src/button/simple_icon_button.dart';
 
 // Enums
 export 'src/utils/enums.dart';

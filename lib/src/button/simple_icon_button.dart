@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gbc_components/src/utils/button_utils.dart';
 import 'package:gbc_components/src/utils/enums.dart';
 
-class IconButton extends StatefulWidget {
+class SimpleIconButton extends StatefulWidget {
   final GestureTapCallback? onTap;
   final bool isloading;
   final IconData icon;
@@ -12,13 +12,13 @@ class IconButton extends StatefulWidget {
   final SizeButton? size;
   final Color? color;
   final Color? hoverColor;
-  const IconButton({super.key, required this.icon, this.hoverColor, this.color, this.isloading=false, this.onTap, this.type=TypeButton.primary, this.size=SizeButton.lg, required this.label});
+  const SimpleIconButton({super.key, required this.icon, this.hoverColor, this.color, this.isloading=false, this.onTap, this.type=TypeButton.primary, this.size=SizeButton.lg, required this.label});
 
   @override
-  State<IconButton> createState() => _IconButtonState();
+  State<SimpleIconButton> createState() => _SimpleIconButtonState();
 }
 
-class _IconButtonState extends State<IconButton> {
+class _SimpleIconButtonState extends State<SimpleIconButton> {
   bool isHover = false;
 
   @override
@@ -46,6 +46,7 @@ class _IconButtonState extends State<IconButton> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
 
+            if(!widget.isloading)
             Icon(
               widget.icon, 
               color: ButtonUtils.defineTextColor(
@@ -59,7 +60,23 @@ class _IconButtonState extends State<IconButton> {
             const SizedBox(width: 5),
 
             if(widget.isloading)
-              const CircularProgressIndicator(),
+              SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  color: ButtonUtils.defineTextColor(
+                    context, 
+                    type: widget.type, 
+                    disabled: widget.onTap==null,
+                    isHover: isHover,
+                    color: widget.color,
+                    hoverColor: widget.hoverColor,
+                  )
+                ),
+              ),
+            
+            if(widget.isloading)
+              const SizedBox(width: 10),
 
             if(widget.isloading)
               Text(
@@ -89,10 +106,12 @@ class _IconButtonState extends State<IconButton> {
                     hoverColor: widget.hoverColor,
                   )
                 )
-              )
+              ),
+            if(!widget.isloading)
+              const SizedBox(width: 5),
           ]
         )
-      ),
+      )
     );
   }
 
