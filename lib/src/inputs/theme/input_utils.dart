@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gbc_components/src/utils/colors.dart';
-import 'enums.dart';
+import '../../utils/enums.dart';
 
 
 /// Classe: InputUtils

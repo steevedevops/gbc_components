@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gbc_components/src/utils/colors.dart';
 import 'package:gbc_components/src/utils/enums.dart';
-import 'package:gbc_components/src/utils/input_utils.dart';
+import 'package:gbc_components/src/inputs/theme/input_utils.dart';
 
 class TextErrorMessageWidget extends StatelessWidget {
   final StatusTextField statusTextField;

@@ -24,7 +24,7 @@ class _MenuOptionsWidgetState extends State<MenuOptionsWidget> {
         backgroundColor: const WidgetStatePropertyAll<Color>(Colors.white),
         side: WidgetStatePropertyAll<BorderSide>(BorderSide(
           width: 1,
-          color: AppDefaultColor.ti04Color
+          color: Theme.of(context).primaryColor.withOpacity(.1)
         )),
         shape: const WidgetStatePropertyAll<OutlinedBorder>(RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),

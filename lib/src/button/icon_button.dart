@@ -3,21 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:gbc_components/src/utils/button_utils.dart';
 import 'package:gbc_components/src/utils/enums.dart';
 
-class SimpleButton extends StatefulWidget {
+class IconButton extends StatefulWidget {
   final GestureTapCallback? onTap;
   final bool isloading;
+  final IconData icon;
   final String label;
   final TypeButton? type;
   final SizeButton? size;
   final Color? color;
   final Color? hoverColor;
-  const SimpleButton({super.key, this.hoverColor, this.color, this.isloading=false, this.onTap, this.type=TypeButton.primary, this.size=SizeButton.lg, required this.label});
+  const IconButton({super.key, required this.icon, this.hoverColor, this.color, this.isloading=false, this.onTap, this.type=TypeButton.primary, this.size=SizeButton.lg, required this.label});
 
   @override
-  State<SimpleButton> createState() => _SimpleButtonState();
+  State<IconButton> createState() => _IconButtonState();
 }
 
-class _SimpleButtonState extends State<SimpleButton> {
+class _IconButtonState extends State<IconButton> {
   bool isHover = false;
 
   @override
@@ -30,8 +31,8 @@ class _SimpleButtonState extends State<SimpleButton> {
         });
       },
       child: Container(
-        width: double.infinity,
         height: ButtonUtils.defineSize(size: widget.size, type: widget.type),
+        width: double.infinity,
         decoration: ButtonUtils.defineDecoration(
           context, 
           type: widget.type, 
@@ -44,6 +45,19 @@ class _SimpleButtonState extends State<SimpleButton> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
+            Icon(
+              widget.icon, 
+              color: ButtonUtils.defineTextColor(
+              context, 
+              isHover: isHover,
+              color: widget.color,
+              hoverColor: widget.hoverColor,
+              type: widget.type, 
+              disabled: widget.onTap==null
+            )),
+            const SizedBox(width: 5),
+
             if(widget.isloading)
               const CircularProgressIndicator(),
 
@@ -85,4 +99,5 @@ class _SimpleButtonState extends State<SimpleButton> {
   GestureTapCallback? onTap() {
     return widget.isloading ? null : widget.onTap;
   }
+
 }

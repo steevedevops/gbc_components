@@ -16,7 +16,7 @@ import 'package:gbc_components/src/formatters/mmyyyy_formatter.dart';
 import 'package:gbc_components/src/formatters/time_formatter.dart';
 import 'package:gbc_components/src/inputs/theme/input_theme.dart';
 import 'package:gbc_components/src/texts/text_error.dart';
-import 'package:gbc_components/src/utils/input_utils.dart';
+import 'package:gbc_components/src/inputs/theme/input_utils.dart';
 
 
 
