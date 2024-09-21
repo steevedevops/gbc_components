@@ -49,6 +49,7 @@ class _SimpleIconButtonState extends State<SimpleIconButton> {
             if(!widget.isloading)
             Icon(
               widget.icon, 
+              size: 18,
               color: ButtonUtils.defineTextColor(
               context, 
               isHover: isHover,

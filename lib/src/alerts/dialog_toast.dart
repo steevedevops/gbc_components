@@ -10,12 +10,12 @@ void dialogToastMessage(
   }){
     toastification.show(
       context: context,
-      type: dialogColorType == DialogColorType.SUCESS ? ToastificationType.success : dialogColorType == DialogColorType.WARNING ? ToastificationType.warning : ToastificationType.info,
+      type: dialogColorType == DialogColorType.SUCESS ? ToastificationType.success : dialogColorType == DialogColorType.WARNING ? ToastificationType.warning : ToastificationType.error,
       style: ToastificationStyle.flatColored,
       title: Text(message),
       alignment: Alignment.topRight,
       autoCloseDuration: const Duration(seconds: 3),
-      borderRadius: BorderRadius.circular(12.0),
+      borderRadius: BorderRadius.circular(5.0),
       boxShadow: highModeShadow,
       showProgressBar: true,
     );

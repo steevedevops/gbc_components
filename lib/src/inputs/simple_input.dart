@@ -82,7 +82,7 @@ class _SimpleInputState extends State<SimpleInput> {
               color: InputUtils.getColorBorder(statusValided: statusValided, enabled: widget.enabled!)
             ),
             color: widget.enabled == false ? AppDefaultColor.ti05Color : null,
-            borderRadius: BorderRadius.circular(10)
+            borderRadius: BorderRadius.circular(5)
           ),
           child: TextFormField(
             controller: widget.controller,
