@@ -45,8 +45,23 @@ class _SimpleButtonState extends State<SimpleButton> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             if(widget.isloading)
-              const CircularProgressIndicator(),
+              SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  color: ButtonUtils.defineTextColor(
+                      context, 
+                      type: widget.type, 
+                      disabled: widget.onTap==null,
+                      isHover: isHover,
+                      color: widget.color,
+                      hoverColor: widget.hoverColor,
+                    ),
+                ),
+              ),
 
+            if(widget.isloading)
+              const SizedBox(width: 10),
             if(widget.isloading)
               Text(
                 ' Carregando...',
